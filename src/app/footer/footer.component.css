@@ -1,0 +1,16 @@
+ul.social-network {
+    list-style: none;
+    display: inline;
+    padding: 0px;
+}
+ul.social-network li {
+    display: inline;
+    padding: 10px;
+    margin: 0;
+}
+.icons:hover {
+    color: white;
+}
+a {
+    color: cyan;
+}
