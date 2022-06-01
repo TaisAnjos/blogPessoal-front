@@ -1,87 +1,3 @@
-<!-- <div class="container-fluid">
-  <div class="row align-items-center d-flex">
-    <div class="col">
-      <div class="col-md-6 bg-dark img-fluid" id="img-bg"></div>
-
-      <div class="col-md-6 mt-5 mb-5">
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-10">
-            <h1 class="text-center">Cadastro</h1>
-
-            <div class="form-group">
-              <label for="usuario">Nome</label>
-              <input
-                class="form-control"
-                type="text"
-                id="nome"
-                placeholder="Seu nome aqui"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="usuario">Usuario</label>
-              <input
-                class="form-control"
-                type="text"
-                id="usuario"
-                placeholder="Seu usuario aqui"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="foto">Foto</label>
-              <input
-                class="form-control"
-                type="text"
-                id="foto"
-                placeholder="Link da sua foto"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="senha">Senha</label>
-              <input
-                class="form-control"
-                type="password"
-                id="senha"
-                placeholder="Sua senha aqui"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="confirmSenha">Confirmar senha</label>
-              <input
-                class="form-control"
-                type="password"
-                id="confirmSenha"
-                placeholder="Confirme sua senha"
-              />
-            </div>
-
-            <div class="form-group">
-              <label for="tipo">Tipo de usuário</label>
-              <select class="form-control" name="tipo" id="tipo">
-                <option>Selecione um tipo de usuário:</option>
-                <option value="normal">Normal</option>
-                <option value="adm">Administrador</option>
-              </select>
-            </div>
-
-            <div class="row">
-              <div class="col pl-3">
-                <button type="button" class="btn btn-danger mr-4">
-                  Cancelar
-                </button>
-                <button type="button" class="btn btn-primary">Cadastrar</button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div> -->
-
 <div class="container-fluid">
     <div class="row align-items-center d-flex">
 
@@ -95,6 +11,7 @@
             <div class="form-group">
                 <label for="usuario">Nome</label>
                 <input
+                [(ngModel)]="user.nome"
                   class="form-control"
                   type="text"
                   id="nome"
@@ -105,6 +22,7 @@
               <div class="form-group">
                 <label for="usuario">Usuario</label>
                 <input
+                [(ngModel)]="user.usuario"
                   class="form-control"
                   type="text"
                   id="usuario"
@@ -115,6 +33,7 @@
               <div class="form-group">
                 <label for="foto">Foto</label>
                 <input
+                [(ngModel)]="user.foto"
                   class="form-control"
                   type="text"
                   id="foto"
@@ -125,6 +44,7 @@
               <div class="form-group">
                 <label for="senha">Senha</label>
                 <input
+                (input)="confirmaSenha($event)"
                   class="form-control"
                   type="password"
                   id="senha"
@@ -135,6 +55,7 @@
               <div class="form-group">
                 <label for="confirmSenha">Confirmar senha</label>
                 <input
+                [(ngModel)]="user.senha"
                   class="form-control"
                   type="password"
                   id="confirmSenha"
@@ -144,7 +65,7 @@
   
               <div class="form-group">
                 <label for="tipo">Tipo de usuário</label>
-                <select class="form-control" name="tipo" id="tipo">
+                <select (change)="tipoUsuarioo($event)" class="form-control" name="tipo" id="tipo">
                   <option>Selecione um tipo de usuário:</option>
                   <option value="normal">Normal</option>
                   <option value="adm">Administrador</option>
@@ -154,10 +75,9 @@
                   <button type="button" class="btn btn-danger mr-4">
                     Cancelar
                   </button>
-                  <button type="button" class="btn btn-primary">Cadastrar</button>
+                  <button (click)="cadastrar()" type="button" class="btn btn-primary">Cadastrar</button>
                 </div>
                 </div>
           </div>
         </div>
       </div>
-  
