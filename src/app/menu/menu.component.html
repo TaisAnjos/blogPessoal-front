@@ -1,4 +1,4 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-primary text-white">
+<nav class="navbar navbar-expand-lg navbar-light bg-primary text-white">
   <button
     class="navbar-toggler"
     type="button"
@@ -20,7 +20,7 @@
       </li>
       <li class="nav-item active">
         <img
-          src="https://i.imgur.com/VELHYzx.jpg"
+          src="{{foto}}"
           alt="Foto de perfil"
           width="50px"
           width="50px"
@@ -33,7 +33,7 @@
           class="m-0 font weight bold pl-3 pr-1 shadow-sm py-1"
           font-size="13px"
         >
-          Nome do usuário
+        Olá,  {{nome}}
         </p>
       </li>
     </ul>
@@ -41,80 +41,12 @@
     <ul class="navbar-nav ml-auto d-flex">
       <li class="nav-item">
         <a class="m-0 font weight bold pr-3"
-          ><button type="button" class="btn btn-primary">Sair</button>
+          ><button type="button" class="btn btn-primary" (click)="sair()">Sair
+          </button>
           <i
             class="fi fi-sr-sign-out text-white align-items-center pl-3 mt-1"
           ></i
         ></a>
-      </li>
-    </ul>
-  </div>
-</nav> -->
-
-<nav class="navbar navbar-expand-lg navbar-light navbaar text-white">
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarSupportedContent"
-    aria-controls="navbarSupportedContent"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto d-flex align-items-center">
-      <li class="nav-item active">
-        <img
-          src="https://i.imgur.com/VELHYzx.jpg"
-          alt="Foto de perfil"
-          width="50px"
-          width="50px"
-          class="img-fluid rounded-circle border border-light"
-        />
-      </li>
-
-      <li class="nav-item">
-        <p
-          class="m-0 font weight bold pl-3 pr-1 shadow-sm py-1"
-          font-size="13px"
-        >
-          Home
-        </p>
-      </li>
-
-      <li class="nav-item">
-        <p
-          class="m-0 font weight bold pl-3 pr-1 shadow-sm py-1"
-          font-size="13px"
-        >
-          Nossa missão
-        </p>
-      </li>
-
-      <li class="nav-item">
-        <p
-          class="m-0 font weight bold pl-3 pr-1 shadow-sm py-1"
-          font-size="13px"
-        >
-          O time
-        </p>
-      </li>
-    </ul>
-
-    <ul class="navbar-nav ml-auto d-flex">
-      <li class="nav-item">
-        <a class="m-0 font weight bold pr-4"
-          ><button type="button" class="btn btn-outline-primary text-white">Login</button>
-        </a>
-      </li>
-
-      <li class="nav-item">
-        <a class="m-0 font weight bold pr-3"
-          ><button type="button" class="btn btn-outline-light  ">Cadastro</button>
-        </a>
       </li>
     </ul>
   </div>

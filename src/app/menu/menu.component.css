@@ -7,3 +7,6 @@ a {
 .navbaar {
     background-color:darkorchid;
 }
+a{
+    text-decoration: none;
+}
