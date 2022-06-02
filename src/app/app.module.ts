@@ -11,6 +11,8 @@ import { CadastroComponent } from './cadastro/cadastro.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { TemaComponent } from './tema/tema.component';
 
 
 @NgModule({
@@ -20,7 +22,8 @@ import { HomeComponent } from './home/home.component';
     FooterComponent,
     LoginComponent,
     CadastroComponent,
-    HomeComponent
+    HomeComponent,
+    TemaComponent
   ],
   imports: [
     BrowserModule,
@@ -29,7 +32,11 @@ import { HomeComponent } from './home/home.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [],
+  providers: [{
+    provide: LocationStrategy,
+    useClass: HashLocationStrategy 
+  }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
