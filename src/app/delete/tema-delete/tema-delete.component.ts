@@ -21,7 +21,7 @@ export class TemaDeleteComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    if (environment.token == ""){
+    if (environment.token == " "){
       alert ('Sua sessão expirou! Faça o login')
       this.router.navigate(['/login'])
 
@@ -39,11 +39,9 @@ export class TemaDeleteComponent implements OnInit {
   }
 
   apagar () {
-    this.temaService.deleteTema(this.idTema).subscribe({
-      next: () => {
+    this.temaService.deleteTema(this.idTema).subscribe(()=>{
         alert ('Tema apagado com sucesso!')
         this.router.navigate(['/tema'])
-      }
     })
   }
 }

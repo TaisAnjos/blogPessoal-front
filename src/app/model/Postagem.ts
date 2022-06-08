@@ -1,3 +1,4 @@
+import { Tema } from "./Tema";
 import { User } from "./User";
 
 export class Postagem{
@@ -5,6 +6,7 @@ export class Postagem{
     public titulo: string;
     public texto: string;
     public date: Date;
-    public tema: string;
-    public usuario: User; 
+    
+    public usuario: User;
+    public tema: Tema;
 }
