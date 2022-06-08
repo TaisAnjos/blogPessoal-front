@@ -1,6 +1,8 @@
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { TemaDeleteComponent } from './delete/tema-delete/tema-delete.component';
+import { TemaEditComponent } from './edit/tema-edit/tema-edit.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { TemaComponent } from './tema/tema.component';
@@ -10,7 +12,9 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent },
   {path: 'cadastro', component: CadastroComponent},
   {path: 'home', component: HomeComponent},
-  {path: 'tema', component: TemaComponent}
+  {path: 'tema', component: TemaComponent},
+  {path: 'tema-edit/:id', component: TemaEditComponent},
+  {path:'delete-edit/:id,', component: TemaDeleteComponent}
 ];
 
 @NgModule({
