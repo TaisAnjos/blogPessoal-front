@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment.prod';
 import { Postagem } from '../model/Postagem';
 import { Tema } from '../model/Tema';
 import { User } from '../model/User';
+import { AuthService } from '../service/auth.service';
 import { PostagemService } from '../service/postagem.service';
 import { TemaService } from '../service/tema.service';
 
@@ -25,7 +26,8 @@ export class HomeComponent implements OnInit {
   constructor(
     private router: Router,
     private  postagemService: PostagemService,
-    private temaService: TemaService
+    private temaService: TemaService,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -61,6 +63,14 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  findByIdUser () {
+    this.authService.getByIdUser(this.idUser).subscribe({
+      next: (resp: User) => {
+        this.user = resp
+      }
+    })
+  }
+
   publicar () {
     this.tema.id = this.idTema
     this.postagem.tema = this.tema
@@ -72,6 +82,8 @@ export class HomeComponent implements OnInit {
       next: (resp: Postagem) => {
         this.postagem = resp
         alert ('Postagem realizada com sucesso!')
+        this.postagem = new Postagem()
+        this.getAllPostagens ()
       }
     })
   }
