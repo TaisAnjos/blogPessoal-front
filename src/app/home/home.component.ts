@@ -36,6 +36,7 @@ export class HomeComponent implements OnInit {
       this.router.navigate(['/login'])
     }
 
+    this.authService.refreshToken()
     this.findAllTemas()
     this.getAllPostagens()
   }
